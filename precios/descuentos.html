@@ -24,6 +24,23 @@
     </form>
   </section>
 
+  <section>
+    <h2>Calcula el precio a pagar de tus productos con cupones de descuento</h2>
+    <form>
+      <label for="InputPriceCoupon">Escribe el precio de tu producto</label>
+      <input type="number" name="InputPriceCoupon" id="InputPriceCoupon"  />
+      <label for="InputDiscountCoupon">Selecciona el cupón que deseas aplicar</label>
+      <select name="InputDiscountCoupon" id="InputDiscountCoupon">
+        <option selected value="0">Ninguno</option>
+        <option value="15">Cupón quinceañero - 15% de descuento</option>
+        <option value="20">Cupón doble decada - 20% de descuento</option>
+        <option value="30">Cupón perla - 30% de descuento </option>
+      </select>
+      <button type="button" onclick="onClickButtonPriceDiscountCoupon()">Calcular el precio con cupón de descuento</button>
+      <p id="ResultPriceCoupon"></p>
+    </form>
+  </section>
+
   <script src="./descuentos.js"></script>
 </body>
 </html>
