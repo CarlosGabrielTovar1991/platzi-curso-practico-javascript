@@ -22,3 +22,27 @@ function calcularMediaAritmetica(lista = null) {
   );
   return sumaElementos / cantidadElementos;
 }
+
+function esPar(valor) {
+  if (valor % 2 === 0) return true;
+  return false;
+}
+
+function calcularMediana(listaParametro) {
+  let mediana = null;
+  const lista = [ ...listaParametro ];
+  lista.sort((elementoUno, elementoDos) => {
+    if (elementoUno < elementoDos) return -1;
+    if (elementoUno > elementoDos) return 1;
+    return 0;
+  });
+  const mitad = parseInt(lista.length / 2);
+  if (esPar(lista.length)) {
+    const elementoUno = lista[mitad - 1]
+    const elementoDos = lista[mitad]
+    mediana = calcularMediaAritmetica([ elementoUno, elementoDos]);
+  } else {
+    mediana = lista[mitad];
+  }
+  return mediana;
+}
