@@ -31,7 +31,7 @@ function esPar(valor) {
 function calcularMediana(listaParametro) {
   let mediana = null;
   const lista = [ ...listaParametro ];
-  lista.sort((elementoUno, elementoDos) => {
+  lista.sort(function(elementoUno, elementoDos) {
     if (elementoUno < elementoDos) return -1;
     if (elementoUno > elementoDos) return 1;
     return 0;
@@ -45,4 +45,19 @@ function calcularMediana(listaParametro) {
     mediana = lista[mitad];
   }
   return mediana;
+}
+
+function calcularModa(lista) {
+  const contador = {};
+  lista.map(function(elemento) {
+    if (!contador[elemento]) {
+      contador[elemento] = 1;
+    } else {
+      contador[elemento] += 1;
+    }
+  });
+  const listaContadores = Object.entries(contador).sort(function (elementoUno, elementoDos) {
+    return (elementoUno[1] - elementoDos[1]);
+  });
+  return parseInt(listaContadores[listaContadores.length - 1][0]);
 }
