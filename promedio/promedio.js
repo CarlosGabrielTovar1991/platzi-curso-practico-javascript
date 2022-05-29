@@ -61,3 +61,14 @@ function calcularModa(lista) {
   });
   return parseInt(listaContadores[listaContadores.length - 1][0]);
 }
+
+function calcularPromedioCuadratico(lista) {
+  const listaCuadratica = lista.map(function (elementoActual) {
+    return elementoActual ** 2;
+  });
+  const sumatoria = listaCuadratica.reduce(function (acumulador = 0, elemento) {
+    return acumulador + elemento;
+  });
+
+  return Math.sqrt(sumatoria / lista.length);
+}
